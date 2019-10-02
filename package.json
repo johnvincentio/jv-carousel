@@ -1,6 +1,6 @@
 {
   "name": "jv-carousel",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Gatsby React Carousel",
   "scripts": {
     "start": "webpack-dev-server --hot --inline --mode development",

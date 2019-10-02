@@ -8,7 +8,8 @@ const ReactDOM = require('react-dom');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './public/index.html',
   filename: './public/index.html',
-  inject: 'body'
+	inject: 'body',
+	minify: false,
 });
 
 const env = process.env.WEBPACK_ENV;
@@ -21,9 +22,9 @@ if (env === 'build') {
   entry = './src/index.js';
   output = {
     path: path.join(__dirname, 'lib'),
-    filename: 'react-infinite-carusel.min.js',
+    filename: 'react-infinite-carousel.min.js',
     library: 'InfiniteCarousel',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
   };
   externals = [
     {
@@ -37,58 +38,43 @@ if (env === 'build') {
         root: 'ReactDOM',
         commonjs2: 'react-dom',
         commonjs: 'react-dom',
-        amd: 'react-dom'
-      }
-    }
+        amd: 'react-dom',
+      },
+    },
   ];
 } else {
   plugins.push(HtmlWebpackPluginConfig);
   entry = './public/app.js';
   output = {
     path: path.resolve('dist'),
-    filename: 'index_bundle.js'
+		filename: 'index_bundle.js',
   };
   externals = [];
 }
 
 const config = {
-  entry: entry,
+  entry,
   devtool: 'source-map',
-  output: output,
-  plugins: plugins,
+  output,
+  plugins,
   module: {
     rules: [
       {
         test: /\.css$/,
-        loaders: [ 'style-loader', 'css-loader?modules' ]
+        loaders: ['style-loader', 'css-loader?modules'],
       },
       {
 				test: /(\.jsx|\.js)$/,
 				exclude: /node_modules/,
         loader: 'babel-loader',
-        // exclude: /(node_modules|bower_components)/,
-        // query: {
-        //   cacheDirectory: true,
-        //   presets: ['react', 'es2015', 'stage-0']
-        // }
       },
-      // {
-      //   test: /(\.jsx|\.js)$/,
-      //   loader: "eslint-loader",
-      //   exclude: /node_modules/,
-      //   query: {
-      //     cacheDirectory: true,
-      //     presets: ['react', 'es2015', 'stage-0']
-      //   }
-      // }
-    ]
+    ],
   },
   resolve: {
-    //main: path.resolve('./src'),
-    modules: [path.resolve('./src'), path.resolve('./public'), "node_modules"],
-    extensions: ['.js']
+    modules: [path.resolve('./src'), path.resolve('./public'), 'node_modules'],
+    extensions: ['.js'],
   },
-  externals: externals,
+  externals,
 };
 
 module.exports = config;

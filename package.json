@@ -1,11 +1,11 @@
 {
   "name": "jv-carousel",
-  "version": "2.0.0",
+  "version": "1.0.8",
   "description": "Gatsby React Carousel",
   "scripts": {
     "start": "webpack-dev-server --hot --inline --mode development",
     "build": "webpack --mode production --progress",
-    "production": "rm -rf dist && NODE_ENV=production npm run build",
+    "production": "rm -rf dist && WEBPACK_ENV=build npm run build",
     "serve": "serve -l 8065 dist"
   },
   "repository": {
@@ -21,9 +21,9 @@
     "react slider",
     "lazy loading"
   ],
-  "author": "Leaf Music",
+  "author": "jv",
   "license": "MIT",
-  "main": "./lib/react-infinite-carusel.min.js",
+  "main": "./lib/react-infinite-carousel.min.js",
   "bugs": {
     "url": "https://github.com/jv-carousel/issues"
   },
@@ -55,6 +55,8 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "gm-base64": "^1.1.1",
     "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
     "serve": "^11.2.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.0",

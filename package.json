@@ -1,0 +1,70 @@
+{
+  "name": "jv-carousel",
+  "version": "1.0.0",
+  "description": "Gatsby React Carousel",
+  "scripts": {
+    "build": "WEBPACK_ENV=build webpack",
+    "dev": "WEBPACK_ENV=dev webpack-dev-server --content-base dist/ --progress --colors --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://git@github.com:johnvincentio/jv-carousel.git"
+  },
+  "keywords": [
+    "carousel",
+    "slider",
+    "infinite carousel",
+    "responsive carousel",
+    "react carousel",
+    "react slider",
+    "lazy loading"
+  ],
+  "author": "Leaf Music",
+  "license": "MIT",
+  "main": "./lib/react-infinite-carusel.min.js",
+  "bugs": {
+    "url": "https://github.com/jv-carousel/issues"
+  },
+  "homepage": "https://github.com/johnvincentio/jv-carousel#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "gm-base64": "^1.1.1",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.19.1",
+    "webpack": "3.8.1",
+    "webpack-dev-server": "2.9.4"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-responsive-mixin": "^0.4.0"
+  },
+  "npmName": "jv-carousel",
+  "npmFileMap": [
+    {
+      "basePath": "/lib/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ]
+}

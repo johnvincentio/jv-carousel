@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const React = require('react');
 const ReactDOM = require('react-dom');
 
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+// const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './public/index.html',
   filename: './public/index.html',
@@ -17,7 +17,7 @@ const libraryName = 'react-infinite-carusel';
 let plugins = [], output, entry, externals;
 
 if (env === 'build') {
-  plugins.push(new UglifyJsPlugin({ minimize: true }));
+  // plugins.push(new UglifyJsPlugin({ minimize: true }));
   entry = './src/index.js';
   output = {
     path: path.join(__dirname, 'lib'),
@@ -57,29 +57,30 @@ const config = {
   output: output,
   plugins: plugins,
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.css$/,
         loaders: [ 'style-loader', 'css-loader?modules' ]
       },
       {
-        test: /(\.jsx|\.js)$/,
+				test: /(\.jsx|\.js)$/,
+				exclude: /node_modules/,
         loader: 'babel-loader',
-        exclude: /(node_modules|bower_components)/,
-        query: {
-          cacheDirectory: true,
-          presets: ['react', 'es2015', 'stage-0']
-        }
+        // exclude: /(node_modules|bower_components)/,
+        // query: {
+        //   cacheDirectory: true,
+        //   presets: ['react', 'es2015', 'stage-0']
+        // }
       },
-      {
-        test: /(\.jsx|\.js)$/,
-        loader: "eslint-loader",
-        exclude: /node_modules/,
-        query: {
-          cacheDirectory: true,
-          presets: ['react', 'es2015', 'stage-0']
-        }
-      }
+      // {
+      //   test: /(\.jsx|\.js)$/,
+      //   loader: "eslint-loader",
+      //   exclude: /node_modules/,
+      //   query: {
+      //     cacheDirectory: true,
+      //     presets: ['react', 'es2015', 'stage-0']
+      //   }
+      // }
     ]
   },
   resolve: {

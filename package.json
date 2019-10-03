@@ -1,11 +1,11 @@
 {
   "name": "jv-carousel",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "description": "Gatsby React Carousel",
   "scripts": {
     "start": "webpack-dev-server --hot --inline --mode development",
     "build": "webpack --mode production --progress",
-    "production": "rm -rf dist && WEBPACK_ENV=build npm run build",
+    "production": "rm -rf lib && WEBPACK_ENV=build npm run build",
     "serve": "serve -l 8065 dist"
   },
   "repository": {
